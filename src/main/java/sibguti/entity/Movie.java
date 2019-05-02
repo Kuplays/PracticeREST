@@ -1,4 +1,4 @@
-package sibguti.server;
+package sibguti.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,11 +11,9 @@ public class Movie {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
-//"СТАНДАРТНЫЙ ШАБЛОН ТОЛЬКО ДЛЯ ПРОВЕРКИ СБОРКИ"
+    private String title;
 
-    private String name;
-
-    private String email;
+    private String description;
 
 	public Integer getId() {
 		return id;
@@ -25,21 +23,19 @@ public class Movie {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String newTitle) {
+		this.title = newTitle;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setDescription(String newDescription) {
+		this.description = newDescription;
 	}
-
-
 }
