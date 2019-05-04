@@ -41,7 +41,7 @@ public class MainController {
 		movie.setMovieActors(movieActors);
 		movie.setDescription(description);
 		movie.setMovieCountry(movieCountry);
-		movie.setMoviePosterURL(moviePosterURL),
+		movie.setMoviePosterURL(moviePosterURL);
 		movie.setMovieImdbRating(movieImdbRating);
 		movie.setMovieWebsite(movieWebsite);
 		movie.setImdbID(imdbID);
