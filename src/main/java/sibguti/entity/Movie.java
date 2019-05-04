@@ -10,9 +10,7 @@ public class Movie {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-
     private String title;
-
     private String description;
 
 	public Integer getId() {
