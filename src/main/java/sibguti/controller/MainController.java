@@ -17,10 +17,34 @@ public class MainController {
 	private MovieRepository movieRepository;
 
 	@GetMapping(path="/add")
-	public @ResponseBody String addMovie (@RequestParam String title, @RequestParam String description) {
+	public @ResponseBody String addMovie (@RequestParam String 	title, 
+										@RequestParam int 		movieYear,
+										@RequestParam String 	movieRated,
+										@RequestParam String 	movieReleaseDate,
+										@RequestParam String 	movieRuntime,
+										@RequestParam String 	movieGenre,
+										@RequestParam String 	movieDirector,
+										@RequestParam String 	movieActors,
+										@RequestParam String 	description,
+										@RequestParam String 	movieCountry,
+										@RequestParam String 	moviePosterURL,
+										@RequestParam double 	movieImdbRating,
+										@RequestParam String 	movieWebsite,
+										@RequestParam String 	imdbID) {
 		Movie movie = new Movie();
 		movie.setTitle(title);
+		movie.setMovieYear(movieYear);
+		movie.setMovieRated(movieRated);
+		movie.setMovieRuntime(movieRuntime);
+		movie.setMovieGenre(movieGenre);
+		movie.setMovieDirector(movieDirector);
+		movie.setMovieActors(movieActors);
 		movie.setDescription(description);
+		movie.setMovieCountry(movieCountry);
+		movie.setMoviePosterURL(moviePosterURL),
+		movie.setMovieImdbRating(movieImdbRating);
+		movie.setMovieWebsite(movieWebsite);
+		movie.setImdbID(imdbID);
 		movieRepository.save(movie);
 
 		return "Saved";
