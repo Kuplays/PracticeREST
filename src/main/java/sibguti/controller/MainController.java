@@ -22,6 +22,7 @@ public class MainController {
 		movie.setTitle(title);
 		movie.setDescription(description);
 		movieRepository.save(movie);
+
 		return "Saved";
 	}
 
