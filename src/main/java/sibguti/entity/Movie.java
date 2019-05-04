@@ -23,6 +23,7 @@ public class Movie {
     private String 		moviePosterURL;
     private double 		movieImdbRating;
     private String 		movieWebsite;
+    private String 		imdbID;
 
 	public Integer getId() {return id;}
 	public void setId(Integer id) {this.id = id;}
@@ -65,4 +66,7 @@ public class Movie {
 
 	public String getMovieWebsite() {return movieWebsite;}
 	public void setMovieWebsite(String newMovieWebsite) {this.movieWebsite = newMovieWebsite;}
+
+	public String getImdbID() {return imdbID;}
+	public void setImdbID(String newImdbID) {this.imdbID = newImdbID;}
 }
