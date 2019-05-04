@@ -9,31 +9,60 @@ import javax.persistence.Id;
 public class Movie {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
-    private String title;
-    private String description;
+    private Integer 	id;
+    private String 		title;
+    private int 		movieYear;
+    private String 		movieRated;
+    private String 		movieReleaseDate;
+    private String 		movieRuntime;
+    private String 		movieGenre;
+    private String 		movieDirector;
+    private String 		movieActors;
+    private String 		description;
+    private String 		movieCountry;
+    private String 		moviePosterURL;
+    private double 		movieImdbRating;
+    private String 		movieWebsite;
 
-	public Integer getId() {
-		return id;
-	}
+	public Integer getId() {return id;}
+	public void setId(Integer id) {this.id = id;}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	public String getTitle() {return title;}
+	public void setTitle(String newTitle) {this.title = newTitle;}
 
-	public String getTitle() {
-		return title;
-	}
+	public int getMovieYear() {return movieYear;}
+	public void setMovieYear(int newMovieYear) {this.movieYear = newMovieYear;}
 
-	public void setTitle(String newTitle) {
-		this.title = newTitle;
-	}
+	public String getMovieRated() {return movieRated;}
+	public void setMovieRated(String newMovieRated) {this.movieRated = newMovieRated;}
 
-	public String getDescription() {
-		return description;
-	}
+	public String getMovieReleaseDate() {return movieReleaseDate;}
+	public void setMovieReleaseDate(String newMovieReleaseDate) {this.movieReleaseDate = newMovieReleaseDate;}
 
-	public void setDescription(String newDescription) {
-		this.description = newDescription;
-	}
+	public String getMovieRuntime() {return movieRuntime;}
+	public void setMovieRuntime(String newMovieRuntime) {this.movieRuntime = newMovieRuntime;}
+
+	public String getMovieGenre() {return movieGenre;}
+	public void setMovieGenre(String newMovieGenre) {this.movieGenre = newMovieGenre;}
+
+	public String getMovieDirector() {return movieDirector;}
+	public void setMovieDirector(String newMovieDirector) {this.movieDirector = newMovieDirector;}
+
+	public String getMovieActors() {return movieActors;}
+	public void setMovieActors(String newMovieActors) {this.movieActors = newMovieActors;}
+
+	public String getDescription() {return description;}
+	public void setDescription(String newDescription) {this.description = newDescription;}
+
+	public String getMovieCountry() {return movieCountry;}
+	public void setMovieCountry(String newMovieCountry) {this.movieCountry = newMovieCountry;}
+
+	public String getMoviePosterURL() {return moviePosterURL;}
+	public void setMoviePosterURL(String newMoviePosterURL) {this.moviePosterURL = newMoviePosterURL;}
+
+	public double getMovieImdbRating() {return movieImdbRating;}
+	public void setMovieImdbRating(double newMovieImdbRating) {this.movieImdbRating = newMovieImdbRating;}
+
+	public String getMovieWebsite() {return movieWebsite;}
+	public void setMovieWebsite(String newMovieWebsite) {this.movieWebsite = newMovieWebsite;}
 }
