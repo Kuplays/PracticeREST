@@ -1,74 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>RESTmovies</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/babel">
-    	var App = React.createClass({
-	    	loadMovies: function() {
-	    		var self = this;
-	    		$.ajax({
-	    			url:"http://localhost:9999/test/all"
-	    		}).then(function(data) {
-	    			self.setState({movies: data.movies});
-	    		});
-	    	},
-	    	getInitialState: function() {
-	    		return {movies: []};
-	    	},
-	    	componentDidMount: function() {
-	    		this.loadMovies();
-	    	},
-	    	render() {
-	    		return(<MoviesTable movies={this.state.movies}/>);
-	    	}
-    	});
+<!doctype html>
+<html ng-app="angular-app">
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<title>RESTmovies</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="angularApp.js"></script>
 
-    	var MoviesTable = React.createClass({
-    		render: function() {
-    			var rows = [];
-    			this.props.movies.forEach(function(movie) {
-    				rows.push(<Movie movie={movie}/>);
-    			});
-
-    			return (
-    				<div className="container">
-    					<table className="table table-striped">
-    						<tbody>
-    							{rows}
-    						</tbody>
-    					</table>
-    				</div> 
-    			);
+    	<style type="text/css">
+    		h1 {
+    			text-align: center;
     		}
-    	});
-
-    	var Movie = React.createClass({
-    		getInitialState: function() {
-    			return {display: true};
-    		},
-
-    		render: function() {
-    			if (this.state.display==false) return null;
-    			else return (
-    				<tr>
-    					{this.props.movies.title}<br/>
-    					{this.props.movies.movieGenre}<br/>
-    					<img src={this.props.movies.moviePosterURL}/>
-    				</tr>
-    			);
+    		.mainBlock {
+    			width: 400px;
+    			margin: auto;
     		}
-    	});
+    		.childElem {
+    			border-radius: 25px;
+  				background: #73AD21;
+  				padding: 20px;
+  				margin-bottom: 5px; 
+    		}
+    	</style>
 
-    	ReactDOM.render(<App/>, document.getElementById('root'));
-    </script>
+	</head>
 
-</head>
-<body>
-    <div id='root'></div>
-    <script src="https://fb.me/react-15.0.1.js"></script>
-    <script src="https://fb.me/react-dom-15.0.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</body>
+	<body>
+		<div ng-controller="data-handler" class="mainBlock">
+			<div ng-repeat="currentMovie in data" class="childElem">
+				<h2>{{currentMovie.title}}</h2>
+				<p>{{currentMovie.movieGenre}}<p>
+				<img src={{currentMovie.moviePosterURL}}/>
+			</div>
+		</div>
+	</body>
 </html>
