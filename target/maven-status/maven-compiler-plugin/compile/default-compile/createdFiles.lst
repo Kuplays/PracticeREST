@@ -1,4 +1,5 @@
 sibguti/repository/MovieRepository.class
+HomeController.class
 sibguti/Application.class
 sibguti/controller/MainController.class
 sibguti/entity/Movie.class

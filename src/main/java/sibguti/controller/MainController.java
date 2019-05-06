@@ -11,7 +11,7 @@ import sibguti.entity.Movie;
 import sibguti.repository.MovieRepository;
 
 @Controller
-@RequestMapping(path="/test")
+@RequestMapping(path="/")
 public class MainController {
 	@Autowired
 	private MovieRepository movieRepository;
