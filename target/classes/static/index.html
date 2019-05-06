@@ -4,33 +4,31 @@
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<title>RESTmovies</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     	<script src="angularApp.js"></script>
-
-    	<style type="text/css">
-    		h1 {
-    			text-align: center;
-    		}
-    		.mainBlock {
-    			width: 400px;
-    			margin: auto;
-    		}
-    		.childElem {
-    			border-radius: 25px;
-  				background: #73AD21;
-  				padding: 20px;
-  				margin-bottom: 5px; 
-    		}
-    	</style>
-
 	</head>
 
 	<body>
-		<div ng-controller="data-handler" class="mainBlock">
+		 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  			<form class="form-inline float-right" action="#">
+    			<input class="form-control mr-sm-2" type="text" placeholder="Movie Title">
+    			<button class="btn btn-primary" type="submit">Find Movie</button>
+  			</form>
+		</nav> 
+		<div ng-controller="data-handler" class="mainBlock" style="margin-top:80px">
 			<div ng-repeat="currentMovie in data" class="childElem">
-				<h2>{{currentMovie.title}}</h2>
+				<h1 class="text-uppercase">{{currentMovie.title}}</h1>
 				<p>{{currentMovie.movieGenre}}<p>
-				<img src={{currentMovie.moviePosterURL}}/>
+				<img class='float-left, img-thumbnail' src={{currentMovie.moviePosterURL}}/>
+				<p>{{currentMovie.description}}</p>
+				<p>Actors: {{currentMovie.movieActors}}</p>
+				<p>IMDB RATING: {{currentMovie.movieImdbRating}}</p>
+				<p>Country of Origin: {{}currentMovie.movieCountry}</p>
+				<a href="{{currentMovie.movieWebsite}}">{{currentMovie.movieWebsite}}</a>
 			</div>
 		</div>
 	</body>
