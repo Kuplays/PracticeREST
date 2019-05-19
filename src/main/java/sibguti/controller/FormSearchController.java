@@ -9,12 +9,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import sibguti.forms.FormTitle;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
+import java.net.URL;
+
+import sibguti.forms.FormTitle;
+import sibguti.entity.Movie;
 
 @Controller
 public class FormSearchController implements WebMvcConfigurer {
-
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/query").setViewName("search");
@@ -32,6 +38,14 @@ public class FormSearchController implements WebMvcConfigurer {
             return "search";
         }
 
-        return "redirect:http://www.omdbapi.com/?apikey=71dee3d0&t=" + formTitle.getSearchTitle();
+        ObjectMapper oMapper = new ObjectMapper();
+        Movie movie;
+        try {
+            url = new URL("file:/home/aleksandr/Desktop/PRAKTIKA/PracticeREST/test.json");
+            movie = oMapper.readValue(new URL("http://www.omdbapi.com/?apikey=71dee3d0&t=" + formTitle.getSearchTitle()), Movie.class);
+        } catch(IOException ex) {}
+
+        return movie.toString();
+        //return "redirect:http://www.omdbapi.com/?apikey=71dee3d0&t=" + mName;
     }
 }

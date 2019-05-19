@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
+@JsonIgnoreProperties(ignoreUnknown=true)
 @Entity 
 public class Movie {
     @Id
@@ -28,7 +31,8 @@ public class Movie {
 	public Integer getId() {return id;}
 	public void setId(Integer id) {this.id = id;}
 
-	public String getTitle() {return title;}
+	public String getTitle() {return this.title;}
+	@JsonSetter("Title")
 	public void setTitle(String newTitle) {this.title = newTitle;}
 
 	public int getMovieYear() {return movieYear;}
@@ -69,4 +73,8 @@ public class Movie {
 
 	public String getImdbID() {return imdbID;}
 	public void setImdbID(String newImdbID) {this.imdbID = newImdbID;}
+
+	public String toString() {
+		return "Title: " + title;
+	}
 }
