@@ -36,42 +36,55 @@ public class Movie {
 	public void setTitle(String newTitle) {this.title = newTitle;}
 
 	public int getMovieYear() {return movieYear;}
+	@JsonSetter("Year")
 	public void setMovieYear(int newMovieYear) {this.movieYear = newMovieYear;}
 
 	public String getMovieRated() {return movieRated;}
+	@JsonSetter("Rated")
 	public void setMovieRated(String newMovieRated) {this.movieRated = newMovieRated;}
 
 	public String getMovieReleaseDate() {return movieReleaseDate;}
+	@JsonSetter("Released")
 	public void setMovieReleaseDate(String newMovieReleaseDate) {this.movieReleaseDate = newMovieReleaseDate;}
 
 	public String getMovieRuntime() {return movieRuntime;}
+	@JsonSetter("Runtime")
 	public void setMovieRuntime(String newMovieRuntime) {this.movieRuntime = newMovieRuntime;}
 
 	public String getMovieGenre() {return movieGenre;}
+	@JsonSetter("Genre")
 	public void setMovieGenre(String newMovieGenre) {this.movieGenre = newMovieGenre;}
 
 	public String getMovieDirector() {return movieDirector;}
+	@JsonSetter("Director")
 	public void setMovieDirector(String newMovieDirector) {this.movieDirector = newMovieDirector;}
 
 	public String getMovieActors() {return movieActors;}
+	@JsonSetter("Actors")
 	public void setMovieActors(String newMovieActors) {this.movieActors = newMovieActors;}
 
 	public String getDescription() {return description;}
+	@JsonSetter("Plot")
 	public void setDescription(String newDescription) {this.description = newDescription;}
 
 	public String getMovieCountry() {return movieCountry;}
+	@JsonSetter("Country")
 	public void setMovieCountry(String newMovieCountry) {this.movieCountry = newMovieCountry;}
 
 	public String getMoviePosterURL() {return moviePosterURL;}
+	@JsonSetter("Poster")
 	public void setMoviePosterURL(String newMoviePosterURL) {this.moviePosterURL = newMoviePosterURL;}
 
 	public double getMovieImdbRating() {return movieImdbRating;}
+	@JsonSetter("imdbRating")
 	public void setMovieImdbRating(double newMovieImdbRating) {this.movieImdbRating = newMovieImdbRating;}
 
 	public String getMovieWebsite() {return movieWebsite;}
+	@JsonSetter("Website")
 	public void setMovieWebsite(String newMovieWebsite) {this.movieWebsite = newMovieWebsite;}
 
 	public String getImdbID() {return imdbID;}
+	@JsonSetter("imdbID")
 	public void setImdbID(String newImdbID) {this.imdbID = newImdbID;}
 
 	public String toString() {
