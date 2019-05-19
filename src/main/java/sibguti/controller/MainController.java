@@ -6,12 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import sibguti.entity.Movie;
 import sibguti.repository.MovieRepository;
 
 @Controller
-public class MainController {
+public class MainController implements WebMvcConfigurer {
 	@Autowired
 	private MovieRepository movieRepository;
 
@@ -52,7 +53,7 @@ public class MainController {
 		movie.setImdbID(imdbID);
 		movieRepository.save(movie);
 
-		return "Saved";
+		return "redirect:/query";
 	}
 
 	@GetMapping(path="/all")
