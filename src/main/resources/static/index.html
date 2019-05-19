@@ -16,19 +16,14 @@
 		 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   			<form class="form-inline float-right" action="#">
     			<input class="form-control mr-sm-2" type="text" placeholder="Movie Title">
-    			<button class="btn btn-primary" type="submit">Find Movie</button>
+    			<button class="btn btn-primary" type="submit">Add Movie</button>
   			</form>
 		</nav> 
 		<div ng-controller="data-handler" class="mainBlock" style="margin-top:80px">
 			<div ng-repeat="currentMovie in data" class="childElem">
-				<h1 class="text-uppercase">{{currentMovie.title}}</h1>
-				<p>{{currentMovie.movieGenre}}<p>
-				<img class='float-left, img-thumbnail' src={{currentMovie.moviePosterURL}}/>
-				<p>{{currentMovie.description}}</p>
-				<p>Actors: {{currentMovie.movieActors}}</p>
-				<p>IMDB RATING: {{currentMovie.movieImdbRating}}</p>
-				<p>Country of Origin: {{}currentMovie.movieCountry}</p>
-				<a href="{{currentMovie.movieWebsite}}">{{currentMovie.movieWebsite}}</a>
+				<h1 class="text-uppercase">{{currentMovie.Title}}</h1>
+				<img class='float-left, img-thumbnail' src={{currentMovie.Poster}}/>
+				<a href="{{currentMovie.movieWebsite}}">{{currentMovie.Website}}</a>
 			</div>
 		</div>
 	</body>

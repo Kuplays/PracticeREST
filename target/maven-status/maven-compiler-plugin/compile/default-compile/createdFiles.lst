@@ -1,6 +1,5 @@
 sibguti/repository/MovieRepository.class
 sibguti/controller/FormSearchController.class
-HomeController.class
 sibguti/Application.class
 sibguti/controller/MainController.class
 sibguti/entity/Movie.class

@@ -86,13 +86,4 @@ public class Movie {
 	public String getImdbID() {return imdbID;}
 	@JsonSetter("imdbID")
 	public void setImdbID(String newImdbID) {this.imdbID = newImdbID;}
-
-	public String toString() {
-		String response = "";
-		response += "TITLE: " + this.title;
-		response += "\nDESCR: " + this.description;
-		response += "\nPoster: " + this.moviePosterURL;
-		response += "\nRATING: " + this.movieImdbRating;
-		return response;
-	}
 }

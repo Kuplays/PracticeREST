@@ -2,3 +2,5 @@
 /home/aleksandr/Desktop/PRAKTIKA/PracticeREST/src/main/java/sibguti/Application.java
 /home/aleksandr/Desktop/PRAKTIKA/PracticeREST/src/main/java/sibguti/repository/MovieRepository.java
 /home/aleksandr/Desktop/PRAKTIKA/PracticeREST/src/main/java/sibguti/controller/MainController.java
+/home/aleksandr/Desktop/PRAKTIKA/PracticeREST/src/main/java/sibguti/forms/FormTitle.java
+/home/aleksandr/Desktop/PRAKTIKA/PracticeREST/src/main/java/sibguti/controller/FormSearchController.java

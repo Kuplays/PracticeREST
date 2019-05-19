@@ -11,10 +11,14 @@ import sibguti.entity.Movie;
 import sibguti.repository.MovieRepository;
 
 @Controller
-@RequestMapping(path="/test")
 public class MainController {
 	@Autowired
 	private MovieRepository movieRepository;
+
+	@GetMapping(path="/")
+	public String home() {
+		return "index";
+	}
 
 	@GetMapping(path="/add")
 	public @ResponseBody String addMovie (@RequestParam String 	title, 
@@ -35,6 +39,7 @@ public class MainController {
 		movie.setTitle(title);
 		movie.setMovieYear(movieYear);
 		movie.setMovieRated(movieRated);
+		movie.setMovieReleaseDate(movieReleaseDate);
 		movie.setMovieRuntime(movieRuntime);
 		movie.setMovieGenre(movieGenre);
 		movie.setMovieDirector(movieDirector);
@@ -54,4 +59,6 @@ public class MainController {
 	public @ResponseBody Iterable<Movie> getAllMovies() {
 		return movieRepository.findAll();
 	}
+
+
 }

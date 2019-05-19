@@ -44,7 +44,20 @@ public class FormSearchController implements WebMvcConfigurer {
             movie = oMapper.readValue(new URL("http://www.omdbapi.com/?apikey=71dee3d0&t=" + formTitle.getSearchTitle()), Movie.class);
         } catch(IOException ex) {}
 
-        return movie.toString();
-        //return "redirect:http://www.omdbapi.com/?apikey=71dee3d0&t=" + mName;
+        return "redirect:/add?title=" + movie.getTitle() 
+                                            + "&movieYear=" + movie.getMovieYear()
+                                            + "&movieRated=" + movie.getMovieRated()
+                                            + "&movieReleaseDate=" + movie.getMovieReleaseDate()
+                                            + "&movieRuntime=" + movie.getMovieRuntime()
+                                            + "&movieGenre=" + movie.getMovieGenre()
+                                            + "&movieDirector=" + movie.getMovieDirector()
+                                            + "&movieActors=" + movie.getMovieActors()
+                                            + "&description=" + movie.getDescription()
+                                            + "&movieCountry=" + movie.getMovieCountry()
+                                            + "&moviePosterURL=" + movie.getMoviePosterURL()
+                                            + "&movieImdbRating=" + movie.getMovieImdbRating()
+                                            + "&movieWebsite=" + movie.getMovieWebsite()
+                                            + "&imdbID=" + movie.getImdbID();
     }
 }
+
