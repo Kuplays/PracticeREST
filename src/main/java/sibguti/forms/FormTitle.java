@@ -9,7 +9,7 @@ public class FormTitle {
 	private String searchTitle;
 
 	public void setSearchTitle(String newTitle) {
-		searchTitle = newTitle;
+		searchTitle = newTitle.replaceAll(" ", "+");
 	}
 
 	public String getSearchTitle() {

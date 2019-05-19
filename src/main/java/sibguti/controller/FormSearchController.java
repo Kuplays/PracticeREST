@@ -39,9 +39,8 @@ public class FormSearchController implements WebMvcConfigurer {
         }
 
         ObjectMapper oMapper = new ObjectMapper();
-        Movie movie;
+        Movie movie = null;
         try {
-            url = new URL("file:/home/aleksandr/Desktop/PRAKTIKA/PracticeREST/test.json");
             movie = oMapper.readValue(new URL("http://www.omdbapi.com/?apikey=71dee3d0&t=" + formTitle.getSearchTitle()), Movie.class);
         } catch(IOException ex) {}
 
