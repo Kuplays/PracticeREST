@@ -13,17 +13,41 @@
 	</head>
 
 	<body>
-		 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  			<form class="form-inline float-right" action="#">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  			<form class="form-inline" action="#">
     			<input class="form-control mr-sm-2" type="text" placeholder="Movie Title">
     			<button class="btn btn-primary" type="submit">Add Movie</button>
   			</form>
 		</nav> 
 		<div ng-controller="data-handler" class="mainBlock" style="margin-top:80px">
-			<div ng-repeat="currentMovie in data" class="childElem">
-				<h1 class="text-uppercase">{{currentMovie.Title}}</h1>
-				<img class='float-left, img-thumbnail' src={{currentMovie.Poster}}/>
-				<a href="{{currentMovie.Website}}">{{currentMovie.Website}}</a>
+			<div ng-repeat="currentMovie in data" class="childElem row">
+				<div class="col"></div>
+				<div class="col-6 shadow p-3 mb-5 bg-light rounded">
+					<div class="row">
+						<div class="col">
+							<span><b>{{currentMovie.Title}}</b></span>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<img class='img-thumbnail' src={{currentMovie.Poster}}/>
+						</div>
+						<div class="col">
+							<span><b>Country:</b>{{currentMovie.Country}}</span><br>
+							<span><b>Genre:</b>{{currentMovie.Genre}}</span><br>
+							<span><b>Actors:</b>{{currentMovie.Actors}}</span><br>
+							<span><b>Directed by:</b>{{currentMovie.Director}}</span><br>
+							<span><b>Runtime:</b>{{currentMovie.Runtime}}</span><br>
+							<span><b>Released on:</b>{{currentMovie.Released}}</span><br>
+							<span><b>IMDB: </b>{{currentMovie.imdbRating}}</span><br>
+							<span><b>Website:</b><a href="{{currentMovie.Website}}">Visit</a></span><br>
+							<span><b>Description:</b></span><br>
+							<span>{{currentMovie.Plot}}</span><br>
+						</div>
+					</div>
+				</div>
+				<div class="col"></div>
 			</div>
 		</div>
 	</body>
