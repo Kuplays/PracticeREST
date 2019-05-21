@@ -23,7 +23,7 @@ public class MainController implements WebMvcConfigurer {
 
 	@GetMapping(path="/add")
 	public @ResponseBody String addMovie (@RequestParam String 	title, 
-										@RequestParam int 		movieYear,
+										@RequestParam String 		movieYear,
 										@RequestParam String 	movieRated,
 										@RequestParam String 	movieReleaseDate,
 										@RequestParam String 	movieRuntime,
@@ -53,12 +53,12 @@ public class MainController implements WebMvcConfigurer {
 		movie.setImdbID(imdbID);
 		movieRepository.save(movie);
 
-		return "redirect:/query";
+		return "Saved to Database";
 	}
 
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<Movie> getAllMovies() {
-		return movieRepository.findAll();
+		return movieRepository.getByIdDESC();
 	}
 
 

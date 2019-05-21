@@ -14,10 +14,26 @@
 
 	<body>
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  			<form class="form-inline" action="#">
-    			<input class="form-control mr-sm-2" type="text" placeholder="Movie Title">
-    			<button class="btn btn-primary" type="submit">Add Movie</button>
-  			</form>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       			<span class="navbar-toggler-icon"></span>
+     		</button>
+     		<div class="collapse navbar-collapse">
+       			<ul class="navbar-nav">
+         			<li class="nav-item active">
+           				<a class="nav-link" href="http://localhost:9999/">Display Default<span class="sr-only">(current)</span></a>
+         			</li>
+         			<li class="nav-item">
+           				<a class="nav-link" href="http://localhost:9999/rating">Display Sorted by Rating</a>
+         			</li>
+         			<li class="nav-item">
+           				<a class="nav-link" href="http://localhost:9999/custom">Display Sorted By Custom Field</a>
+         			</li>
+         			<li class="nav-item">
+           				<a class="nav-link" href="#" onClick="window.open('http://localhost:9999/query','Add Movie','resizable, height=260,width=370'); return false;">Add Movie</a>
+         			</li>
+       			</ul>
+        		<a class="navbar-brand ml-auto" href="#">RESTmovies</a>
+     		</div>
 		</nav> 
 		<div ng-controller="data-handler" class="mainBlock" style="margin-top:80px">
 			<div ng-repeat="currentMovie in data" class="childElem row">

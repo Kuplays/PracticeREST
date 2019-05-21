@@ -4,17 +4,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-@Entity 
+@Entity
+@NamedQuery(name="Movie.getByIdDESC",query="select m from Movie m order by m.id DESC")
+@NamedQuery(name="Movie.getByYearASC", query="select m from Movie m order by m.movieYear ASC") 
+@NamedQuery(name="Movie.getByTitleASC", query="select m from Movie m order by m.title ASC")
+@NamedQuery(name="Movie.getByRatingASC", query="select m from Movie m order by m.movieImdbRating ASC")
 public class Movie {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer 	id;
     private String 		title;
-    private int 		movieYear;
+    private String 		movieYear;
     private String 		movieRated;
     private String 		movieReleaseDate;
     private String 		movieRuntime;
@@ -35,9 +40,9 @@ public class Movie {
 	@JsonSetter("Title")
 	public void setTitle(String newTitle) {this.title = newTitle;}
 
-	public int getMovieYear() {return movieYear;}
+	public String getMovieYear() {return movieYear;}
 	@JsonSetter("Year")
-	public void setMovieYear(int newMovieYear) {this.movieYear = newMovieYear;}
+	public void setMovieYear(String newMovieYear) {this.movieYear = newMovieYear;}
 
 	public String getMovieRated() {return movieRated;}
 	@JsonSetter("Rated")
