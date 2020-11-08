@@ -1,2 +1,8 @@
-# PracticeREST
-Репо по практике, Java, REST, Spring-Data
+<h1>Библиотека фильмов Spring API</h1>
+
+Простая реализация библиотеки фильмов, использующая сторонние API для поиска и сохранения информации о фильмах
+
+* Технологии:
+  * Java Spring
+  * Jackson mapping
+  * PostgreSQL
